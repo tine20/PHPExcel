@@ -3497,7 +3497,7 @@ class PHPExcel_Calculation
             $rowKey = array_shift($rKeys);
             $cKeys = array_keys(array_keys($operand[$rowKey]));
             $colKey = array_shift($cKeys);
-            if (ctype_upper($colKey)) {
+            if (ctype_upper((string)$colKey)) {
                 $operandData['reference'] = $colKey.$rowKey;
             }
         }
