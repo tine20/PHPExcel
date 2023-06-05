@@ -842,10 +842,10 @@ class PHPExcel_Cell
             if ($pColumnIndex < 26) {
                 $_indexCache[$pColumnIndex] = chr(65 + $pColumnIndex);
             } elseif ($pColumnIndex < 702) {
-                $_indexCache[$pColumnIndex] = chr(64 + ($pColumnIndex / 26)) .
+                $_indexCache[$pColumnIndex] = chr(64 + (int) ($pColumnIndex / 26)) .
                                               chr(65 + $pColumnIndex % 26);
             } else {
-                $_indexCache[$pColumnIndex] = chr(64 + (($pColumnIndex - 26) / 676)) .
+                $_indexCache[$pColumnIndex] = chr(64 + (int) (($pColumnIndex - 26) / 676)) .
                                               chr(65 + ((($pColumnIndex - 26) % 676) / 26)) .
                                               chr(65 + $pColumnIndex % 26);
             }
