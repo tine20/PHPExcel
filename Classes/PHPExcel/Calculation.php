@@ -2067,6 +2067,8 @@ class PHPExcel_Calculation
         )
     );
 
+    protected $_debugLog;
+
 
     public function __construct(PHPExcel $workbook = null)
     {
