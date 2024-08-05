@@ -2063,7 +2063,7 @@ class PHPExcel_Calculation
     private static $controlFunctions = array(
         'MKMATRIX' => array(
             'argumentCount' => '*',
-            'functionCall' => 'self::mkMatrix'
+            'functionCall' => self::class . '::mkMatrix'
         )
     );
 
