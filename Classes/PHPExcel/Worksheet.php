@@ -861,7 +861,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
         $this->title = $pValue;
         $this->dirty = true;
 
-        if ($this->parent && $this->parent->getCalculationEngine()) {
+        if (null !== $oldTitle && $this->parent && $this->parent->getCalculationEngine()) {
             // New title
             $newTitle = $this->getTitle();
             $this->parent->getCalculationEngine()
