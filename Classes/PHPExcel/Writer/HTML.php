@@ -582,7 +582,7 @@ class PHPExcel_Writer_HTML extends PHPExcel_Writer_Abstract implements PHPExcel_
         $colMax++;
         while ($row <= $rowMax) {
             $html .= '<tr>';
-            for ($col = 'A'; $col != $colMax; ++$col) {
+            for ($col = 'A'; $col != $colMax; $col = str_increment($col)) {
                 $html .= '<td>';
                 $html .= $this->writeImageInCell($pSheet, $col.$row);
                 if ($this->includeCharts) {

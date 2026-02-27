@@ -2438,7 +2438,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
                             $this->getCell($currentColumn . $startRow)->setValue($cellValue);
                         }
                     }
-                    ++$currentColumn;
+                    $currentColumn = str_increment($currentColumn);
                 }
                 ++$startRow;
             }
@@ -2477,7 +2477,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
             $rRef = ($returnCellRef) ? $row : ++$r;
             $c = -1;
             // Loop through columns in the current row
-            for ($col = $minCol; $col != $maxCol; ++$col) {
+            for ($col = $minCol; $col != $maxCol; $col = str_increment($col)) {
                 $cRef = ($returnCellRef) ? $col : ++$c;
                 //    Using getCell() will create a new cell if it doesn't already exist. We don't want that to happen
                 //        so we test and retrieve directly against cellCollection

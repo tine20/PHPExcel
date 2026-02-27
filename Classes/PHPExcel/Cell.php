@@ -886,7 +886,7 @@ class PHPExcel_Cell
                 list($rangeStart, $rangeEnd)    = $range;
                 sscanf($rangeStart, '%[A-Z]%d', $startCol, $startRow);
                 sscanf($rangeEnd, '%[A-Z]%d', $endCol, $endRow);
-                ++$endCol;
+                $encCol = str_increment($endCol);
 
                 // Current data
                 $currentCol = $startCol;
@@ -898,7 +898,7 @@ class PHPExcel_Cell
                         $returnValue[] = $currentCol.$currentRow;
                         ++$currentRow;
                     }
-                    ++$currentCol;
+                    $currentCol = str_increment($currentCol);
                     $currentRow = $startRow;
                 }
             }
