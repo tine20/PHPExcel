@@ -2470,7 +2470,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
         $maxCol = PHPExcel_Cell::stringFromColumnIndex($rangeEnd[0] -1);
         $maxRow = $rangeEnd[1];
 
-        $maxCol++;
+        $maxCol = str_increment($maxCol);
         // Loop through rows
         $r = -1;
         for ($row = $minRow; $row <= $maxRow; ++$row) {
